@@ -1,6 +1,10 @@
 # onlyoffice-in-docker
 使用docker-compose编排解决onlyoffice的部署
 
+
+https://www.linuxbabe.com/docker/onlyoffice-nextcloud-integration-docker
+
+
 ## 如何使用
 
 * 在项目的certs目录中放置https证书文件：key跟crt文件，cer不需要，并重命名为onlyoffice.crt和onlyoffice.key
