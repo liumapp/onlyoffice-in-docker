@@ -39,7 +39,7 @@ services:
     networks:
      - onlyoffice
     ports:
-     - '80:80'
+     - '8080:8080'
      - '443:443'
      - '5222:5222'
     stdin_open: true
@@ -64,7 +64,7 @@ services:
     volumes:
        - document_data:/var/www/onlyoffice/Data
        - document_log:/var/log/onlyoffice
-       - ./document_fonts:/usr/share/fonts/truetype/custom
+       - ./document/document_fonts:/usr/share/fonts/truetype/custom
        - document_forgotten:/var/lib/onlyoffice/documentserver/App_Data/cache/files/forgotten
   onlyoffice-mail-server:
     container_name: onlyoffice-mail-server
@@ -95,12 +95,12 @@ networks:
   onlyoffice:
     driver: 'bridge'
 volumes:
-  mail_data: 
-  mail_certs:
-  mail_log:
-  document_data:
-  document_log:
-  document_forgotten:
-  community_data:
-  community_log:
+  mail_data: ./mail/data
+  mail_certs: ./mail/certs
+  mail_log: ./mail/log
+  document_data: ./document/data
+  document_log: ./document/log
+  document_forgotten: ./document/forgotten
+  community_data: ./community/data
+  community_log: ./community/log
   mysql_data: ./mysql_data
